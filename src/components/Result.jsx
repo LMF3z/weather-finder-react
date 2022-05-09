@@ -25,7 +25,12 @@ const Result = ({ weater, city, isLoading }) => {
           </div>
         </>
       ) : !weater?.cod ? (
-        <div className="w-full lg:w-4/5">
+        <div className="w-full lg:w-4/5 flex flex-col justify-center items-center space-y-10">
+          <img
+            src="/cloud.svg"
+            alt="cloud-icon"
+            className="w-32 lg:w-52 h-32 lg:h-52"
+          />
           <label className="text-xl lg:text-3xl">
             Los resultados aparecerán aquí...
           </label>
