@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container_card {
+    @apply w-full h-full p-5;
+}
+
+.card {
+    @apply w-full h-full rounded-lg shadow-2xl;
+}
+
+/* From uiverse.io by @adamgiebl */
+.input-wrapper input {
+    background-color: #eee;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    /* width: 13em; */
+    width: 100%;
+    border-radius: 1rem;
+    /* color: lightcoral; */
+    @apply text-blue;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+   }
+   
+   .input-wrapper input:focus {
+    /* outline-color: lightcoral; */
+    @apply outline outline-1 outline-blue;
+   }
+
+   .input-wrapper select {
+    background-color: #eee;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    /* width: 13em; */
+    width: 100%;
+    border-radius: 1rem;
+    /* color: lightcoral; */
+    @apply text-blue;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+   }
+   
+   .input-wrapper select:focus {
+    /* outline-color: lightcoral; */
+    @apply outline outline-1 outline-blue;
+   }
+
+.button {
+    width: 100%;
+    padding: 0.8rem;
+    @apply bg-blue text-white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+}
+
+/* From uiverse.io by @Ali-Tahmazi99 */
+.load-row {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+  
+  .load-row span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    /* background: #f76002; */
+    @apply bg-blue;
+    border-radius: 50px;
+    animation: up-down6 0.5s ease-in infinite alternate;
+  }
+  
+  .load-row span:nth-child(2) {
+    /* background: #e85b04c4; */
+    background: #0474bd;
+    animation-delay: 0.16s;
+  }
+  
+  .load-row span:nth-child(3) {
+    /* background: #e85b0491; */
+    background: #0d99e2;
+    animation-delay: 0.32s;
+  }
+  
+  .load-row span:nth-child(4) {
+    /* background: #e85b0456; */
+    background: #93cdec;
+    animation-delay: 0.48s;
+  }
+  
+  @keyframes up-down6 {
+    0% {
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      transform: translateY(10px);
+    }
+  }

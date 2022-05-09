@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Form from './components/Form';
+import Header from './components/Header';
+import Layout from './components/Layout';
+import Result from './components/Result';
 
-function App() {
+const App = () => {
+  const [weater, setWeater] = useState({});
+  const [city, setCity] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const requestHandler = async (data) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}?q=${data.city},${data.country}&APPID=${process.env.REACT_APP_API_KEY}`
+      );
+
+      const res = await response.json();
+      setWeater(res);
+      setCity(data.city);
+      setIsLoading(false);
+    } catch (error) {
+      console.log('error ->', error);
+      setWeater(error);
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main className="flex justify-center items-center">
+        <Layout>
+          <div className="container_card">
+            <Form handleSend={requestHandler} />
+          </div>
+          <div className="container_card">
+            <Result weater={weater} isLoading={isLoading} city={city} />
+          </div>
+        </Layout>
+      </main>
+    </>
   );
-}
+};
 
 export default App;
