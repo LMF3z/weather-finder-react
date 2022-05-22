@@ -37,6 +37,14 @@ const Result = ({ weater, city, isLoading }) => {
         </div>
       ) : (
         <>
+          <div className="w-full lg:w-4/5 flex justify-center items-center">
+            <img
+              src="/cloud.svg"
+              alt="cloud-icon"
+              className="w-32 lg:w-52 h-32 lg:h-52"
+            />
+          </div>
+
           <div className="w-full lg:w-4/5">
             <label className="text-xl lg:text-3xl">
               La temepratura en {city} es:

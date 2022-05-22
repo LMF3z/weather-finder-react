@@ -26,7 +26,7 @@ const Form = ({ handleSend }) => {
     >
       <div className="input-wrapper w-full lg:w-4/5">
         <input
-          className="input"
+          className="input text-blue"
           name="city"
           value={formState.city}
           placeholder="Ciudad"
